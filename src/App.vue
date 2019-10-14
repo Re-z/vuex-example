@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-   
+
+    <app-first-component></app-first-component>
+    
   </div>
 </template>
 
