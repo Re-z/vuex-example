@@ -1,17 +1,27 @@
 <template>
     <div>
         <p>{{ counter }}</p>
-        <button>increase counter</button>
+        <p>{{ counter2 }}</p>
+        <button @click="increaseCounter">increase counter</button>
+        <button @click="decreaseCounter ">decrease counter</button>
     </div>
 </template>
 
 
 <script>
+import { mapGetters } from 'vuex';
 export default {
-   computed: {
-       counter() {
-           return this.$store.state.s
+
+   computed: mapGetters(['counter','counter2']),
+   
+   methods: {
+       increaseCounter(){
+           this.$store.commit('increaseCounter')
+       },
+       decreaseCounter() {
+           this.$store.commit('decreaseCounter')
        }
-   }
+   },
+   
 }
 </script>
